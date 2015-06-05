@@ -1,0 +1,6 @@
+.git
+core
+test
+*.o
+a.out
+*.swp
