@@ -4,6 +4,12 @@ ifneq (,$(findstring -DDEBUG, $(CFLAGS)))
 	LDFLAGS += -Wl,--no-as-needed,-lefence
 endif
 
+all: test
+
+test.o: test.c tree.h 
+
+test: test.o
+
 .PHONY: clean print_vars
 
 clean:
