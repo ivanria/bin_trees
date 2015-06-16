@@ -1,3 +1,10 @@
+##############################
+#compile:
+#CFLAGS="-DDEBUG" make
+#for debugging version or just
+#make
+##############################
+CFLAGS := -DDEBUG
 CFLAGS += -Wall -g
 
 ifneq (,$(findstring -DDEBUG, $(CFLAGS)))

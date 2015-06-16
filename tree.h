@@ -3,7 +3,7 @@
 
 typedef enum {
 	SUCC = 0,
-	ERR
+	ERR = -1
 } RC_t;
 
 typedef struct tree_s tree_t;
