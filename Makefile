@@ -1,32 +1,24 @@
-##############################
-#compile:
-#CFLAGS="-DDEBUG" make
-#for debugging version or just
-#make
-##############################
-CFLAGS := -DDEBUG
-CFLAGS += -Wall -g
+export PROG	:= bin_trees
+SRC_DIR		:= ./src
+export CC	:= gcc
+export CFLAGS	:= -Werror -Wall -Wextra -DDEBUG
 
-ifneq (,$(findstring -DDEBUG, $(CFLAGS)))
-	LDFLAGS += -Wl,--no-as-needed,-lefence
-endif
+all:
+	$(MAKE) -C $(SRC_DIR) all
 
-all: test
-
-test.o: test.c tree.h 
-
-test: test.o
-
-.PHONY: clean print_vars
+.PHONY: clean print_vars cleanall
 
 clean:
-	rm -f test *.o
+	$(MAKE) -C $(SRC_DIR) clean
+
+cleanall:
+	$(MAKE) -C $(SRC_DIR) cleanall
 
 print_vars:
 	@echo "===print_vars==="
-	@echo "CFLAGS = $(CFLAGS)"
-	@echo
-	@echo "LDFLAGS = $(LDFLAGS)"
-
-
+	@echo "PROG		= $(PROG)"
+	@echo "SRC_DIR		= $(SRC_DIR)"
+	@echo "CFLAGS		= $(CFLAGS)"
+	@echo "LDFLAGS		= $(LDFLAGS)"
+	$(MAKE) -C $(SRC_DIR) print_vars
 

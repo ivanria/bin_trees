@@ -1,6 +1,4 @@
-.git
-core
-test
-*.o
-a.out
+bin_trees
 *.swp
+*.o
+*.d

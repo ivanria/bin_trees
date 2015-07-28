@@ -2,15 +2,16 @@
 #define _THREE_H
 
 typedef enum {
-	SUCC = 0,
-	ERR = -1
+	ERROR	= -1,
+	SUCCESS	= 0,
 } RC_t;
 
-typedef struct tree_s tree_t;
+typedef struct tree_s Tree_t;
 struct tree_s {
 	int value;
-	tree_t *left, *right;
+	Tree_t *left, *right;
 }; 
-tree_t *treeInit(void);
+
+RC_t PrinTree(void);
 
 #endif /*_TREE_H*/
