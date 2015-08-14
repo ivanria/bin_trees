@@ -197,11 +197,10 @@ void insert(tree_t *root, int data)
 int main(void)
 {
 	tree_t *root;
-	int data[] = {1,2,3,4,5,6,7,8,-2,-3}, i;
+	int data[] = {0,1,2,3,4,5,6,7,8,9}, i;
 	printf("insert\n");
 	root = insert(NULL, data[0]);
 	for (i = 1; i < 10; i++) {
-		print_t(root);
 		root = insert(root, data[i]);
 	}
 	printf("print tree\n");
