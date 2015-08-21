@@ -194,11 +194,11 @@ int main(void)
 {
 	rb_t *root = NULL, node;
 	bzero(&node, sizeof(rb_t));
-	int data[] = {0,1,2,3,4,5,6,7,8,9}, i;
+	int data[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14}, i;
 	printf("insert\n");
 	node.key = data[0];
 	rb_insert(&root, &node);
-	for (i = 1; i < 10; i++) {
+	for (i = 1; i < (int)(sizeof(data) / sizeof(data[0])); i++) {
 		node.key = i;
 		rb_insert(&root, &node);
 	}

@@ -73,7 +73,7 @@ s[2 * depth - 1][offset - width/2 - 1] = '+';
 return left + width + right;
 }
 
-int print_t(tree_t *tree)
+void print_t(tree_t *tree)
 {
 int i;
 char s[20][255];
@@ -132,11 +132,10 @@ int main(void)
 		return 1;
 	}
 	printf("insert\n");
-	for (i = 0; i <= 10; i++) {
+	for (i = 0; i < (int)(sizeof(data) / sizeof(data[0])); i++) {
 		insert(root, data[i]);
 	}
 	printf("print tree\n");
 	print_t(root);
 	return 0;
 }
-
